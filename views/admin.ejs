@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Admin Dashboard </h1>
+    <div>
+        <% if (locals.allUrls) { %>
+            <table>
+                <thead>
+                    <th>S.no</th>
+                    <th>ShortID</th>
+                    <th>RedirectUrl</th>
+                    <th>TotalClicks</th>
+                    <th>CreatedBy</th>
+                </thead>
+                <tbody>
+                    <% allUrls.forEach((urls,index) => { %>
+                        <tr>
+                            <td> <%= index + 1  %>  </td>
+                            <td> <%= urls.shortId %> </td>
+                            <td> <%= urls.redirectURL %> </td>
+                            <td> <%= urls.visitHistory.length %> </td>
+                            <td> <%= urls.createdBy %> </td>
+                        </tr>                 
+                    <% }) %>
+                </tbody>
+            </table>
+         
+        <% } %>
+    </div>
+    
+</body>
+</html>
